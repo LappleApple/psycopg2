@@ -1,46 +1,10 @@
-psycopg2 - Python-PostgreSQL Database Adapter
+Changes to psycopg2: Python-PostgreSQL Database Adapter
 =============================================
 
-Psycopg is the most popular PostgreSQL database adapter for the Python
-programming language.  Its main features are the complete implementation of
-the Python DB API 2.0 specification and the thread safety (several threads can
-share the same connection).  It was designed for heavily multi-threaded
-applications that create and destroy lots of cursors and make a large number
-of concurrent "INSERT"s or "UPDATE"s.
+Psycopg is the most popular PostgreSQL database adapter for the Python programming language. Zalando has the following open PRs:
 
-Psycopg 2 is mostly implemented in C as a libpq wrapper, resulting in being
-both efficient and secure.  It features client-side and server-side cursors,
-asynchronous communication and notifications, "COPY TO/COPY FROM" support.
-Many Python types are supported out-of-the-box and adapted to matching
-PostgreSQL data types; adaptation can be extended and customized thanks to a
-flexible objects adaptation system.
+- `#322`_: Add support for streaming replication protocol
+- `#364`_: Add connection.get_dsn_parameters()
 
-Psycopg 2 is both Unicode and Python 3 friendly.
-
-
-Documentation
--------------
-
-Documentation is included in the 'doc' directory and is `available online`__.
-
-.. __: http://initd.org/psycopg/docs/
-
-
-Installation
-------------
-
-If all the dependencies are met (i.e. you have the Python and libpq
-development packages installed in your system) the standard::
-
-    python setup.py build
-    sudo python setup.py install
-
-should work no problem.  In case you have any problem check the 'install' and
-the 'faq' documents in the docs or online__.
-
-.. __: http://initd.org/psycopg/docs/install.html
-
-For any other resource (source code repository, bug tracker, mailing list)
-please check the `project homepage`__.
-
-.. __: http://initd.org/psycopg/
+.. _#322: https://github.com/psycopg/psycopg2/pull/322
+.. _#364: https://github.com/psycopg/psycopg2/pull/364
